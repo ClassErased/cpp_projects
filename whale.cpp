@@ -30,6 +30,7 @@ int whale_talk(std::string input = "") {
 }
 //I tried... couldn't quite get it to work yet, so its done inside main()
 //int input_handling() {}
+//Turns out parsing the output of a function to another isn't so straightforward.
 int main() {
   std::string str;
   std::cout << "What would you like to convert to whale talk?: ";
