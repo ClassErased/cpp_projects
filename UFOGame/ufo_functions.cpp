@@ -10,28 +10,28 @@ void greet() {
  
 }
 
-// could be void, but might do something with bool
+// Could be void, but might do something with bool. checks conditions for victory
 bool end_game(std::string answer, std::string codeword) {
   if (answer == codeword) {
-    std::cout << "You saved your friend, well done!\n";
+    std::cout << "\nYou saved your friend, well done!\n";
     return true;
   } else {
-    std::cout << "Oh no, the UFO just flew away with another person!\n";
+    std::cout << "\nOh no, the UFO just flew away with another person!\n The answer was " << codeword << "\n";
     return false;
   }
 }
 
+// Function that displays current game information as incorrect guesses and codeword
 void display_status(std::vector<char> incorrect, std::string answer) {
   std::cout << "\nIncorrect Guesses:\n";
   for (int i = 0; i < incorrect.size(); i++) { // Iterate over incorrect vector
     std::cout << incorrect[i] << ' ';
     }
     std::cout << "\nCodeword:\n";
-    for (int i = 0; i < answer.length(); i++) {
+    for (int i = 0; i < answer.length(); i++) { // Iterate over codeword string
       std::cout << answer[i] << ' ';
     }
 }
-
 
 void display_misses(int misses) {
   if (misses >= 0 && misses <= 6) {
