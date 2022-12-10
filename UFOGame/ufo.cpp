@@ -5,16 +5,16 @@
 #include <cctype>
 
 int main() {
-  greet(); // welcome message
+  greet(); // call welcome message function
   
-  int play = 1; // these two lines handle restarting the game if the user wants to play again
-  while (play = 1) {
+  bool play = true; // these two lines handle restarting the game if the user wants to play again
+  while (play = true) { // changed to bool for memory efficiency but it isnt really used yet
 
     srand(time(NULL)); // set seed for rand
     int secret = rand() % 4; // computer picks a random number between 1 and 5
 
+    // assign variables
     std::string codewords[5] = {"codecademy","python","javascript","haskell","programming"};
-  //std::cout << codewords[0];
     std::string codeword = "";
     std::string answer = ""; 
     int misses = 0;
@@ -56,11 +56,10 @@ int main() {
     }
     end_game(answer, codeword); // call function to check if user has won or lost
     
-    //can probably put this in a function but im done with the compiler for now
+  //can probably put this in a function but im done with the compiler for now
   std::string v2 = "";
   std::cout << "\nWould you like to play again? [Y/N]: ";
   std::cin >> v2;
-  //v2 = toupper(v2);
   if (v2 == "N" || v2 == "n") {
     std::cout << "\nThank you for playing!\n";
     break;
