@@ -17,17 +17,16 @@ int main() {
   //std::cout << codewords[0];
     std::string codeword = "";
     std::string answer = ""; 
+    int misses = 0;
+    std::vector<char> incorrect;
+    bool guess = false;
+    char letter;
   
     codeword = codewords[secret]; // select word from array using random number
   
     for (int i = 0; i < codeword.length(); i++) {
       answer += "_"; // for each character in codeword, answer will dsplay an underscore
   }
-  
-    int misses = 0;
-    std::vector<char> incorrect;
-    bool guess = false;
-    char letter;
 
   // Main body of Game Code
     while (answer != codeword && misses < 7) { // User has 6 lives to guess the codeword
@@ -65,6 +64,11 @@ int main() {
   if (v2 == "N" || v2 == "n") {
     std::cout << "\nThank you for playing!\n";
     break;
-    } 
+  } else if (v2 == "Y" || v2 == "y") {
+    std::cout << "\nLets go again!\n";
+  } else {
+    std::cout << "\n\n\nInvalid input, terminating program[!!!]\n\n\n";
+    break;
   }
+  } 
 }
