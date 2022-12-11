@@ -3,7 +3,7 @@
 #pragma comment (lib, "user32.lib")
 
 BOOL APIENTRY DllMain(HMODULE hModule,  DWORD  ul_reason_for_call, LPVOID lpReserved) {
-  switch (Revenge_time) {
+  switch (1) {
     case DLL_PROCESS_ATTACH:
       break;
     case DLL_PROCESS_DETACH:
